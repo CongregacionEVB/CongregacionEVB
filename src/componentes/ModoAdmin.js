@@ -48,6 +48,7 @@ function ModoAdmin(props) {
   };
 
   const handleMenuItemClick = (option) => {
+    const date = new Date();
     // Aquí puedes manejar la lógica según el item seleccionado
     switch(option)
     {
@@ -62,7 +63,6 @@ function ModoAdmin(props) {
         modificando = "Territorios";
         break;
       case "Anuncios":
-        const date = new Date();
         tabla = "AnunciosEVB";
         nombreImagen = "EVB/AnunciosEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Anuncios";
@@ -74,13 +74,12 @@ function ModoAdmin(props) {
         break;
       case "GruposDePredicacion":
         tabla = "Grupos de Predicacion";
-        nombreImagen = "EVB/GruposDePredicacionEVB.png";  
+        nombreImagen = "EVB/GruposDePredicacionEVB" + ": " + date.getDate() + "-" + (date2.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png"; 
         modificando = "Grupos De Predicacion";
         break;
       case "Organigrama":
-        const date2 = new Date();
         tabla = "Organigrama";
-        nombreImagen = "EVB/Organigrama" + ": " + date2.getDate() + "-" + (date2.getMonth() + 1) + "-" + date2.getFullYear() + ":" + date2.getHours() + ":" + date2.getMinutes() + ".png";  
+        nombreImagen = "EVB/Organigrama" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Organigrama";
         break;
     }
@@ -93,7 +92,7 @@ function ModoAdmin(props) {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
       let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Organigrama"))
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Organigrama" || nombreImagen.includes("GruposDePredicacionEVB")))
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
       }
