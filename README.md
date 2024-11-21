@@ -1,3 +1,3 @@
 # Visit us!
 
-Enter website at [CongregacionOJLS](https://congregacionojls.github.io/CongregacionOJLS/).
+Enter website at [CongregacionEVB](https://congregacionevb.github.io/CongregacionEVB/).
