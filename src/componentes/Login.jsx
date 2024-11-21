@@ -14,7 +14,7 @@ const Login = () => {
 
         try{
             await signInWithEmailAndPassword(auth,correo,contraseña)
-            window.location.href = "https://congregacionojls.github.io/CongregacionOJLS/"
+            window.location.href = "https://congregacionevb.github.io/CongregacionEVB/"
         }
         catch(error){
             alert("El correo o la contraseña son incorrectos")
@@ -36,7 +36,7 @@ const Login = () => {
                                 <input type = "email" placeholder="Ingresar Email" className='cajatexto' id='email'/>
                                 <input type="password" placeholder="Ingresar Contraseña" className='cajatexto' id='password'/>
                                 <button className="btnform">Iniciar sesion</button>
-                                <a href="https://congregacionojls.github.io/CongregacionOJLS/"><img className="atras" src="img territorios/atras.png" alt="" /></a>
+                                <a href="https://congregacionevb.github.io/CongregacionEVB/"><img className="atras" src="img territorios/atras.png" alt="" /></a>
                             </form>
                         </div>
                     </div>

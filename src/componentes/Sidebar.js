@@ -83,8 +83,7 @@ function Sidebar({ visible, usuario }) {
           <img src="img territorios/flechaAB.png" height="20" alt="Next" />
         </button>
         <hr />
-        {/*<li><a href="https://congregacionojls.github.io/CongregacionOJLS/">INICIO</a></li>*/}
-        <li><a href="/">INICIO</a></li>
+        <li><a href="https://congregacionevb.github.io/CongregacionEVB/">INICIO</a></li>
         <hr />
         <li><a href="SalidasPredicacion">SALIDAS DE PREDICACION</a></li>
         <hr />
