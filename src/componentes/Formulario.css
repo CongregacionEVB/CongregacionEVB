@@ -1,0 +1,224 @@
+.Formulario {
+  font-family: "Alata";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  font-family: "Alata";
+  background-color: #788d9e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 999;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+  transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+  transform: translateX(0); /* Por defecto, el sidebar se muestra */
+}
+
+
+.visibleSideBar {
+  transform: translateX(0) !important; /* Muestra el sidebar */
+}
+
+.hiddenSideBar {
+  transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #547d9e; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.toggle-btn {
+  margin: 10px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.scrollable-content {
+  flex: 1;
+  overflow: auto;
+  padding: 0 10px; /* Ajuste de relleno para móvil */
+}
+
+.territories-list {
+  width: 100%;
+  padding: 10px;
+}
+
+.form-section {
+  width: 50%;
+  padding: 120px;
+  position: fixed;
+  margin-left: 90px; /* Añadir margen izquierdo para separar del scrollable-content */
+  display: flex;
+}
+
+.territory-item {
+  /*display: flex;*/
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: column; /* Ajuste de dirección para móvil */
+}
+
+.territory-item label {
+  font-family: "Alata";
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #b3cdebf8;
+  background-color: #b3cdebf8;
+  border-radius: 5px;
+  margin-bottom: 5px; /* Añadido espacio abajo para móvil */
+}
+
+.territories-list button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.territories-list button:hover {
+  background-color: #c9d6e4f8;
+}
+
+.ver-formulario-btn {
+  position: fixed;
+  bottom: 20px; /* Ajustado para móviles */
+  right: 20px;
+  background-color: #b3cdebf8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ver-formulario-btn:hover {
+  background-color: #81aad6f8; /* Color cambiado en hover para mejor visibilidad */
+}
+
+/* Consultas de medios para ajustar el diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+
+  #subDiv {
+    margin-bottom: 60px;
+  }
+
+
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  .territories-list,
+  .form-section {
+    width: 100%;
+    padding: 5px; /* Reducido el relleno */
+    position: static; /* Cambiado a static para móvil */
+    margin-left: 0; /* Eliminado margen izquierdo para móvil */
+  }
+  .form-section {
+    width: 100%;
+    position: static; /* Cambiado a static para móvil */
+    margin-left: 0; /* Eliminado margen izquierdo para móvil */
+  }
+
+  .territory-item {
+    flex-direction: row; /* Mantener elementos en fila para pantallas más pequeñas */
+  }
+
+  .form-section {
+    position: static; /* Volver a estático para móvil */
+    margin-left: 0;
+  }
+
+  .ver-formulario-btn {
+    bottom: 10px; /* Ajuste de posición para móviles */
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .territory-item label {
+    font-size: 14px; /* Reducir tamaño de fuente para móviles pequeños */
+  }
+
+  .ver-formulario-btn {
+    padding: 8px 16px; /* Ajuste del tamaño del botón */
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn {
+    display: block; /* Asegurarse de que el botón de toggle esté visible */
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+}

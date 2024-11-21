@@ -1,0 +1,190 @@
+/* Estilos generales */
+body {
+  background-color: rgb(252, 246, 241);
+  font-family: "Quicksand";
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sidebar {
+  background-color: #567cbd; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+  transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+  font-family: "Alata";
+  font-size: x-large;
+}
+
+.pdfAnun {
+  width: 150px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #c8d9e6; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 65px;
+  right: 30px;
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn img {
+  width: 60px; /* Ajusta el tamaño según necesites */
+  height: auto; /* Esto mantiene la proporción de la imagen */
+}
+
+#imgVida {
+  width: 600px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+a {
+  text-decoration: none;
+}
+
+#pdfText {
+  color: rgb(69, 180, 231);
+  text-decoration: none;
+}
+#pdfText:visited {
+  color:rgb(148, 209, 238);
+  text-decoration: none;
+}
+
+.content {
+  margin: 0 0 0 200px; /* Ajuste de margen según la visibilidad del sidebar */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}
+
+.Horarios {
+  font-family: "Alata";
+  font-size: larger;
+  color: #000;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+  1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.notification {
+  position: fixed;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid #62815f;
+  font-size: 20px;
+  background: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1{
+  font-family: "Quicksand";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+h2 {
+  font-family: "Alata";
+}
+
+.welcome {
+  background: #62815f;
+}
+
+a:visited {
+  color: rgb(255, 253, 253); /* Cambia el color del enlace visitado a púrpura */
+}
+
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+  
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #searchInput {
+    width: 100%; /* Hacer el input de búsqueda ocupar todo el ancho disponible */
+    margin-bottom: 10px;
+  }
+
+  .content {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .notification {
+    font-size: 18px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #imgVida {
+    width: 90% !important;
+  }
+
+  .pdfAnun {
+    width: 30% !important;
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn img {
+    width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
+  }
+}

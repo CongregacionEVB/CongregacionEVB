@@ -1,0 +1,157 @@
+
+body {
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  font-family: "Fugaz One", "Paytone One";
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#Texto {
+  font-family: "Paytone One";
+  font-size: large;
+}
+
+footer {
+  padding: 1px;
+  background-color: rgb(253, 239, 225);
+}
+
+#Horarios {
+  font-size: larger;
+  color: #000;
+  font-family: "Paytone One";
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+  1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+
+.sidebar {
+  font-family: "Fugaz One";
+  background-color: #beb49e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+}
+
+
+.visibleSideBar {
+  display: block; /* Muestra el elemento */
+  /*margin: 0 0 0 200px; */
+}
+
+.hiddenSideBar {
+  display: none; /* Oculta el elemento */
+  /*margin: 0 auto; */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
+.toggle-btn {
+  position: fixed;
+  top: 80px;
+  right: 60px;
+  z-index: 999;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn img {
+  width: 60px;
+  height: auto;
+}
+
+
+
+
+
+.welcome {
+  background: #62815f;
+}
+
+  a:visited {
+      color: rgb(255, 253, 253); /* Cambia el color del enlace visitado a púrpura */
+  }
+
+  .padre{
+    display: flex;
+    align-items:center;
+    height: 100%;
+  }
+  .tamaño-imagen{
+    width: 90%;
+    height: 520px;
+    margin-top: 100px;
+  }
+  .cajatexto{
+    background-color: #cccccc40;
+    border-color: slategray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+
+  }
+  .cajatexto:focus{
+    outline: 1px solid cornflowerblue;
+    box-shadow: 0 0 10px cornflowerblue;
+  }
+  .btnform{
+    background-color: cornflowerblue;
+    border-color: slategray;
+    border-radius: 30px;
+    width: 100%;
+    padding: 15px;
+    border-width: 0px;
+    margin-bottom: 20px;
+    color: black;
+  }
+
+
+  .atras {
+    width: auto; /* Set width to auto to adjust based on content */
+    height: auto; /* Set height to auto to adjust based on content */
+    max-width: 100px; /* Set maximum width */
+    max-height: 50px; /* Set maximum height */
+    margin-top: 10px;
+  }
+  

@@ -1,0 +1,93 @@
+/* Estilos generales del Sidebar */
+
+.sidebar {
+  font-family: "Fugaz One";
+  background-color: #beb49e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+  transform: translateX(0); /* Por defecto, el sidebar se muestra */
+}
+
+.visibleSideBar {
+  transform: translateX(0) !important; /* Muestra el sidebar */
+}
+
+.hiddenSideBar {
+  transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
+}
+
+.logoutButton {
+  color: white; /* Cambia el color del texto a blanco */
+  background-color: transparent; /* Hace que el fondo del botón sea transparente */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.logoutButton:hover {
+  background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.cartel {
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid #788d9e; /* Ajusta el borde para ser visible */
+  font-size: 20px;
+  background: #788d9e;
+  text-align: center;
+  color: white;
+}
+
+/* Botones prev y next */
+#prevButton, #nextButton {
+  border: none;
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+  padding: 1px;
+  cursor: pointer;
+}
+
+#prevButton {
+  margin-right: 5px;
+}
+
+/* Media Queries para dispositivos móviles */
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 150px; /* Reducir el ancho del sidebar para pantallas medianas */
+  }
+
+  .cartel {
+      font-size: 18px; /* Ajustar el tamaño de la fuente del cartel */
+      padding: 10px; /* Aumentar el padding para mejor legibilidad */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+      width: 100%; /* Ancho completo para el sidebar en pantallas muy pequeñas */
+      transform: translateX(-100%); /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .visibleSideBar {
+      transform: translateX(0); /* Mostrar el sidebar si está visible */
+  }
+
+  .hiddenSideBar {
+      transform: translateX(-100%); /* Asegurar que el sidebar esté oculto */
+  }
+
+  .cartel {
+      font-size: 16px; /* Ajustar el tamaño de la fuente del cartel */
+      padding: 8px; /* Ajustar el padding para pantallas pequeñas */
+  }
+
+  #prevButton, #nextButton {
+      padding: 5px; /* Ajustar el padding de los botones para pantallas pequeñas */
+  }
+}

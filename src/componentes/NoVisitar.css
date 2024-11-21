@@ -1,0 +1,337 @@
+/* Estilos generales */
+
+/* FAQ Container */
+.faq-container {    
+  max-width: 800px;
+  margin: 50px auto 0 auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.faq-container h2 {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #364f6b;
+}
+
+details {
+  background-color: #f6f8fa;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d8e0e9;
+  color: #364f6b;
+  position: relative;
+  overflow: hidden; /* Asegura que el contenido no sobrepase el contenedor */
+}
+
+details summary {  
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 1rem 300px;
+  cursor: pointer;
+  list-style: none;
+  outline: none;  /* Remove default outline */
+  transition: background-color 0.3s; /* Suaviza el cambio de color de fondo */
+}
+
+details img {
+  width: 600px;
+}
+
+details summary::before {
+  position: absolute;
+  content: "👇";    
+  font-size: 1.75rem;
+  top: 10px;
+  right: 16px;  
+}
+
+details p {
+  padding: 1rem 300px;
+  margin: 0 1rem 1rem 1rem;
+  background: #f6f8fa;
+  border-left: 2px solid #364f6b;
+}
+
+details:hover,
+details[open] {
+  box-shadow: 5px 5px 15px #d9d9d9;
+}
+
+details[open] {
+  background: #ffffff;
+}
+
+.ver-formulario-btn {
+  position: fixed;
+  bottom: 20px; /* Ajustado para móviles */
+  right: 20px;
+  background-color: #b3cdebf8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+details[open] summary {
+  font-weight: 600;
+}
+
+details[open] summary::before {
+  -webkit-animation: rotate-emoji 0.6s ease-in-out both;
+  animation: rotate-emoji 0.6s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-emoji {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-emoji {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  font-family: "Fugaz One";
+  font-size: x-large;
+  background-color: #beb49e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+}
+
+/* Estilos aplicados al sidebar visible */
+.sidebar.visibleSideBar ~ .faq-container details summary {
+  display: none; /* Ocultar summary cuando el sidebar está visible */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+.toggle-btn {
+  position: fixed;
+  top: 55px;
+  right: 10px;
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn img {
+  width: 60px; /* ajusta el tamaño según necesites */
+  height: auto; /* esto mantiene la proporción de la imagen */
+}
+
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+  background-color: #ced9e9;
+  border: 1px solid #ccc;
+}
+
+#searchInput:focus {
+  outline-color: #2f4156;
+}
+
+#results {
+  list-style-type: none;
+  padding: 0;
+}
+
+.result {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.result:hover {
+  background-color: #f0f0f0;
+}
+
+#prevButton, #nextButton {
+  z-index: 999; /* Asegura que el botón esté en la parte superior */  
+  padding: 1;
+  cursor: pointer;
+}
+
+.notification {
+  position: fixed;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid #62815f;
+  font-size: 20px;
+  background: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.welcome {
+  background: #62815f;
+}
+
+a:visited {
+  color: rgb(255, 253, 253); /* Cambia el color del enlace visitado a púrpura */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}
+
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+  /* FAQ Container */
+  .faq-container {
+    margin: 30px auto;
+    padding: 1rem;
+  }
+
+  .faq-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  details {
+    min-width: 100%; /* Hacer que los cuadros ocupen el 100% del ancho disponible */
+  }
+
+  details summary {
+    font-size: 1rem;
+    padding: 1rem 9rem !important;
+  }
+
+  details img {
+    width: 300px;
+  }
+
+  details p {
+    margin: 0 0.75rem 1rem 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+  
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #searchInput {
+    width: 100%; /* Hacer el input de búsqueda ocupar todo el ancho disponible */
+    margin-bottom: 10px;
+  }
+
+  .visibleContent {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .hiddenContent {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .notification {
+    font-size: 18px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 10px;
+  }
+
+  /* Ocultar detalles summary cuando el sidebar está visible */
+  .sidebar.visibleSideBar ~ .faq-container details summary {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  details summary {  
+    padding: 1rem 9rem !important;
+  }
+  details img {
+    width: 100% !important;
+  }
+  
+  /* Asegura que el contenido se adapte bien en pantallas muy pequeñas */
+  .faq-container {
+    padding: 0.5rem;
+  }
+
+  .faq-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn img {
+    width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
+  }
+
+  /* Ocultar detalles summary cuando el sidebar está visible */
+  .sidebar.visibleSideBar ~ .faq-container details summary {
+    display: none;
+  }
+}

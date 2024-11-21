@@ -1,0 +1,67 @@
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ocupa toda la altura de la ventana */
+        margin: 0; /* Ajustar el margen para pantallas pequeñas */
+    }
+    
+    #file {
+        width: 100%;
+        text-wrap: pretty;
+    }
+    .row {
+        flex-direction: column; /* Cambiar la dirección a columna para pantallas pequeñas */
+        align-items: center; /* Centrar los elementos horizontalmente */
+        text-align: center; /* Alinear el texto al centro */
+    }
+
+    .col-md-4, .col-md-8 {
+        width: 100%; /* Ajustar el ancho para que ocupe el 100% del contenedor */
+        max-width: none; /* Quitar el máximo ancho */
+        margin-bottom: 20px; /* Espaciado entre las columnas */
+    }
+
+    .card {
+        width: 100%; /* Ajustar el ancho para que ocupe el 100% del contenedor */
+        max-width: 350px; /* Máximo ancho para el card */
+    }
+
+    #imgLog {
+        display: none !important; /* Ocultar imagen en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column; /* Cambiar la dirección a columna para pantallas muy pequeñas */
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Ocupa toda la altura de la ventana */
+        margin: 0; /* Ajustar el margen para pantallas pequeñas */
+    }
+
+    #file {
+        width: 100%;
+        text-wrap: pretty;
+    }
+
+    .card {
+        width: 90%; /* Ajustar el ancho del card para pantallas muy pequeñas */
+        max-width: 350px; /* Máximo ancho para el card */
+        text-align: center; /* Alinear el texto al centro */
+    }
+
+    .cajatexto {
+        width: 100%; /* Hacer que los campos de entrada ocupen el 100% del contenedor */
+    }
+
+    .btnform {
+        width: 100%; /* Botón ocupa el 100% del ancho del contenedor */
+    }
+
+}

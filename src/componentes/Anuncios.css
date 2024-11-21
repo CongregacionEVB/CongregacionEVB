@@ -1,0 +1,143 @@
+body{
+    background-color:rgb(252, 246, 241);
+    font-family: "Fugaz One";
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.imgAnun{
+  width: 600px;
+}
+
+.pdfAnun {
+  width: 150px;
+}
+
+.sidebar {
+    background-color: #beb49e; /* Color de fondo del sidebar */
+    height: 100vh;
+    width: 230px; /* Ancho del sidebar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: block; /* Por defecto, el sidebar se muestra */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 8px 16px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+  }
+  
+  .toggle-btn {
+    position: fixed;
+    top: 65px;
+    right: 80px;
+    z-index: 999; /* Asegura que el botón esté en la parte superior */
+  }
+  
+  .toggle-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .toggle-btn img {
+    width: 60px; /* ajusta el tamaño según necesites */
+    height: auto; /* esto mantiene la proporción de la imagen */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #pdfText {
+    color: rosybrown;
+    text-decoration: none;
+  }
+  #pdfText:visited {
+    color:rosybrown;
+    text-decoration: none;
+  }
+
+  .visibleContent {
+    margin: 0 0 0 200px;
+  }
+  
+  .hiddenContent {
+    margin: 0 auto;
+  }
+
+/* Media Queries para Adaptar a Dispositivos Móviles */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    position: relative; /* Cambiar la posición a relativa en pantallas pequeñas */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+  
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #searchInput {
+    width: 100%; /* Hacer el input de búsqueda ocupar todo el ancho disponible */
+    margin-bottom: 10px;
+  }
+
+  .content {
+    margin: 0; /* Ajustar el margen para pantallas pequeñas */
+  }
+
+  .notification {
+    font-size: 18px; /* Ajustar el tamaño de fuente para dispositivos móviles */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .imgAnun {
+    width: 90% !important;
+  }
+
+  .pdfAnun {
+    width: 30% !important;
+  }
+
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn img {
+    width: 40px; /* Ajustar el tamaño de la imagen del botón para pantallas muy pequeñas */
+  }
+}

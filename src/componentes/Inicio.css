@@ -1,0 +1,181 @@
+/* Estilos generales */
+
+.NoVisitar {
+  background-size: contain;
+  background-repeat: repeat-y;
+  width: 100%;
+  font-family: "Quicksand";
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#Texto {
+  font-family: "Quicksand";
+  font-size: large;
+}
+
+footer {
+  padding: 1px;
+  background-color: rgb(253, 239, 225);
+}
+
+#Horarios {
+  font-size: larger;
+  color: #000;
+  font-family: "Quicksand";
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+  1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.sidebar {
+  font-family: "Quicksand";
+  background-color: #beb49e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+  transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+  transform: translateX(0); /* Por defecto, el sidebar se muestra */
+}
+
+
+.visibleSideBar {
+  transform: translateX(0) !important; /* Muestra el sidebar */
+}
+
+.hiddenSideBar {
+  transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
+}
+
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 80px;
+  right: 60px;
+  z-index: 999;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn img {
+  width: 60px;
+  height: auto;
+}
+
+.welcome {
+  background: #62815f;
+}
+
+#Titulo {
+  font-family: "Quicksand";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+a:visited {
+  color: rgb(255, 253, 253); /* Cambia el color del enlace visitado */
+}
+
+/* Media Queries para dispositivos móviles */
+
+@media (max-width: 768px){
+  .sidebar{
+    width: 100%; /* El sidebar ocupa el ancho completo en pantallas pequeñas */
+    font-size: x-small;
+    height: auto; /* Permitir que el sidebar ajuste su altura automáticamente */
+    display: none; /* Ocultar el sidebar por defecto en pantallas pequeñas */
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #Texto, #Horarios {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .NoVisitar {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  footer {
+    padding: 10px !important; /* Aumentar el padding para dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: block !important; /* Mostrar el sidebar en pantallas pequeñas si es necesario */
+    width: 100% !important;
+    height: 100% !important;
+    font-size: xx-large !important;
+  }
+
+  .toggle-btn {
+    display: block; /* Asegurarse de que el botón de toggle esté visible */
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  #Texto, #Horarios {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+
+  .NoVisitar {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+}

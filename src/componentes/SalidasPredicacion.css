@@ -1,0 +1,174 @@
+/* Estilos generales */
+body {
+  background-color: rgb(252, 246, 241);
+  font-family: "Fugaz One";
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.imgSal {
+  width: 600px;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #beb49e; /* Color de fondo del sidebar */
+  height: 100vh;
+  width: 230px; /* Ancho del sidebar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  z-index: 999;
+  padding-top: 20px;
+  display: block; /* Por defecto, el sidebar se muestra */
+  transition: transform 0.3s ease; /* Transición para suavizar el movimiento */
+  transform: translateX(0); /* Por defecto, el sidebar se muestra */
+}
+
+.visibleSideBar {
+  transform: translateX(0) !important; /* Muestra el sidebar */
+}
+
+.hiddenSideBar {
+  transform: translateX(-100%) !important; /* Oculta el sidebar moviéndolo fuera de la vista */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 8px 16px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+  background-color: #927e61; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Botón de toggle */
+.toggle-btn {
+  position: fixed;
+  top: 75px; /* Ajustado a 75px para estar alineado con el contenido */
+  right: 80px; /* Ajustado a 80px para estar alineado con el contenido */
+  z-index: 999; /* Asegura que el botón esté en la parte superior */
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn img {
+  width: 60px; /* Ajusta el tamaño según necesites */
+  height: auto; /* Esto mantiene la proporción de la imagen */
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid #62815f;
+  font-size: 20px;
+  background: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Welcome */
+.welcome {
+  background: #62815f;
+}
+
+/* Enlaces visitados */
+a:visited {
+  color: rgb(255, 253, 253); /* Cambia el color del enlace visitado */
+}
+
+/* Contenido visible y oculto */
+.visibleContent {
+  margin: 0 0 0 200px;
+}
+
+.hiddenContent {
+  margin: 0 auto;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .imgSal {
+    width: 400px;
+  }
+
+  .sidebar {
+    width: 100px !important; /* Reducir el ancho del sidebar */
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  .toggle-btn {
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 50px !important;
+  }
+
+  #Texto, #Horarios {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .NoVisitar {
+    font-size: medium !important; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  footer {
+    padding: 10px !important; /* Aumentar el padding para dispositivos móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .imgSal {
+    width: 360px;
+  }
+  .sidebar {
+    display: none; /* Ocultar el sidebar en pantallas muy pequeñas */
+  }
+
+  .toggle-btn {
+    display: block; /* Asegurarse de que el botón de toggle esté visible */
+    right: 10px !important; /* Mover el botón de toggle a la derecha */
+    top: 5px !important;
+  }
+
+  .toggle-btn img {
+    width: 38px !important;
+  }
+
+  .visibleContent {
+    margin: 0 !important; /* Ajustar el margen para el contenido visible */
+  }
+
+  #Texto, #Horarios {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+
+  .NoVisitar {
+    font-size: small !important; /* Ajustar el tamaño de fuente para pantallas muy pequeñas */
+  }
+}

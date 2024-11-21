@@ -1,0 +1,82 @@
+/* Estilo general del componente SheetViewer */
+.SheetViewer {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #f8f9fa; /* Fondo claro */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .SheetViewer h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estilo para la tabla */
+  .SheetViewer table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1em;
+    background-color: #fff; /* Fondo blanco */
+  }
+  
+  .SheetViewer th, 
+  .SheetViewer td {
+    text-align: left;
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Borde para celdas */
+  }
+  
+  /* Encabezado de la tabla */
+  .SheetViewer th {
+    background-color: cornflowerblue; /* Azul para encabezados */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  /* Filas alternas para mejorar la lectura */
+  .SheetViewer tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fondo claro para filas pares */
+  }
+  
+  /* Hover sobre filas */
+  .SheetViewer tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+  }
+  
+  /* Responsividad para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .SheetViewer {
+      padding: 15px;
+    }
+  
+    .SheetViewer table {
+      font-size: 0.9em;
+    }
+  
+    .SheetViewer h2 {
+      font-size: 1.5em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .SheetViewer table {
+      font-size: 0.8em;
+    }
+  
+    .SheetViewer th, 
+    .SheetViewer td {
+      padding: 8px;
+    }
+  
+    .SheetViewer h2 {
+      font-size: 1.3em;
+    }
+  }
+  
