@@ -13,9 +13,11 @@ import Formulario from './componentes/Formulario';
 import Organigrama from './componentes/Organigrama';
 import Zoom from './componentes/Zoom';
 import GruposPredicacion from './componentes/GruposPredicacion';
+import Asignaciones from './componentes/Asignaciones';
 
 import appFirebase from './credenciales';
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
+
 
 
 
@@ -53,6 +55,8 @@ function App() {
         <Route path="/GruposPredicacion" element={<GruposPredicacion usuario={usuario}/>}>
         </Route>
         <Route path="/SalidasPredicacion" element={<SalidasPredicacion usuario={usuario}/>}>
+        </Route>
+        <Route path="/Asignaciones" element={<Asignaciones usuario={usuario}/>}>
         </Route>
         <Route path="/Login" element={<Login usuario={usuario}/>}>
         </Route>

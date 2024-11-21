@@ -82,6 +82,11 @@ function ModoAdmin(props) {
         nombreImagen = "EVB/Organigrama" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
         modificando = "Organigrama";
         break;
+      case "Asignaciones":
+        tabla = "Asignaciones";
+        nombreImagen = "EVB/Asignaciones" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";  
+        modificando = "Asignaciones";
+        break;
     }
     console.log(option);
     console.log(tabla);
@@ -92,7 +97,7 @@ function ModoAdmin(props) {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
       let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Organigrama") || nombreImagen.includes("GruposDePredicacionEVB") || nombreImagen.includes("VidaYMinisterioEVB") || nombreImagen.includes("SalidasDePredicacionEVB"))
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Organigrama") || nombreImagen.includes("GruposDePredicacionEVB") || nombreImagen.includes("VidaYMinisterioEVB") || nombreImagen.includes("SalidasDePredicacionEVB")|| nombreImagen.includes("Asignaciones"))
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
       }
@@ -213,6 +218,7 @@ function ModoAdmin(props) {
                 <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterio')}>Vida y ministerio</a>
                 <a href="#" onClick={() => handleMenuItemClick('GruposDePredicacion')}>Grupos De Predicacion</a>
                 <a href="#" onClick={() => handleMenuItemClick('Organigrama')}>Organigrama</a>
+                <a href="#" onClick={() => handleMenuItemClick('Asignaciones')}>Asignaciones</a>
               </div>
             )}
           </div>
