@@ -74,7 +74,7 @@ function ModoAdmin(props) {
         break;
       case "GruposDePredicacion":
         tabla = "Grupos de Predicacion";
-        nombreImagen = "EVB/GruposDePredicacionEVB" + ": " + date.getDate() + "-" + (date2.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png"; 
+        nombreImagen = "EVB/GruposDePredicacionEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png"; 
         modificando = "Grupos De Predicacion";
         break;
       case "Organigrama":
