@@ -54,7 +54,7 @@ function ModoAdmin(props) {
     {
       case "SalidasDePredicacion":
         tabla = "SalidasDePredicacionEVB";
-        nombreImagen = "EVB/SalidasDePredicacionEVB.png";
+        nombreImagen = "EVB/SalidasDePredicacionEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png"; 
         modificando = "Salidas De Predicacion";
         break;
       case "Territorios":
@@ -69,7 +69,7 @@ function ModoAdmin(props) {
         break;
       case "VidaYMinisterio":
         tabla = "Vida y ministerio EVB";
-        nombreImagen = "EVB/VidaYMinisterioEVB.png";  
+        nombreImagen = "EVB/VidaYMinisterioEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";   
         modificando = "Vida y ministerio";
         break;
       case "GruposDePredicacion":
@@ -92,7 +92,7 @@ function ModoAdmin(props) {
     const uploadFile = () => {
       const fileExtension = file.name.split('.').pop(); // Obtén la extensión del archivo
       let fileName = null;
-      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Organigrama") || nombreImagen.includes("GruposDePredicacionEVB"))
+      if (nombreImagen.includes("Anuncios") || nombreImagen.includes("Organigrama") || nombreImagen.includes("GruposDePredicacionEVB") || nombreImagen.includes("VidaYMinisterioEVB") || nombreImagen.includes("SalidasDePredicacionEVB"))
       {
         fileName = `${nombreImagen.replace(".png", `.${fileExtension}`)}`;
       }

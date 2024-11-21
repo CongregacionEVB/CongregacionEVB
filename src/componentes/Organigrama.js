@@ -6,7 +6,7 @@ import appFirebase from '../credenciales';
 import { useEffect } from 'react';
 
 export const db = getFirestore(appFirebase);
-
+const isPDF = (url) => /.*\.pdf(\?.*)?$/.test(url);
 function Organigrama(props) {
 
   const [data, setData] = useState([]);
@@ -48,7 +48,14 @@ function Organigrama(props) {
     <h1>Organigrama</h1>
     <hr/>
     <br/>
-    <img id="imgVida" src={data[0]? data[0].url: ""}/>
+    {data[0]? isPDF(data[0].url) ? (
+      <a href={data[0]? data[0].url : ""} target="_blank" rel="noopener noreferrer">
+        <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={'Conf'} /> {/* Asegúrate de tener un ícono de PDF */}
+        <h3 id='pdfText'>{data[0].name}</h3>
+      </a>
+      ) : (
+      <img className="imgVida" src={data[0]? data[0].url : ""} alt={'Conf'} />
+              ) : "" }
     <br/>
     <br/>
     </div>
