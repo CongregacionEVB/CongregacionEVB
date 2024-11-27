@@ -29,10 +29,14 @@ function NoVisitar(props) {
             <h1>No visitar </h1>
             <hr/>
         </div>
-        <SheetViewer></SheetViewer>
+        <SheetViewer hoja="No Visitar"></SheetViewer>
+        {props.usuario && (
+          <>
           <button className="ver-formulario-btn" onClick={goToGoogleSheets}>
               Ver formulario
             </button>
+          </>
+        )}
     </div>
 </div>
   );

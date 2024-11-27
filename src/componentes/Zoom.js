@@ -1,9 +1,10 @@
-import './VidaYMinisterio.css';
+import './NoVisitar.css';
 import Sidebar from './Sidebar';
 import React, { useState } from 'react';
 import { addDoc, collection, doc,getDocs, setDoc,getFirestore, serverTimestamp} from 'firebase/firestore';
 import appFirebase from '../credenciales';
 import { useEffect } from 'react';
+import SheetViewer from './SheetViewer';
 
 export const db = getFirestore(appFirebase);
 
@@ -39,6 +40,10 @@ function Zoom(props) {
     setSidebarVisible(!sidebarVisible);
   };
 
+  const goToGoogleSheets = () => {
+    window.open("https://docs.google.com/spreadsheets/d/1N73IzMZndcuImT_ODf_aDrnLvWAuBF8p5tqTZBD3Nt4/edit?gid=272190201#gid=272190201", "_blank");  
+  };
+
   return (
     <div className="Zoom">
         <Sidebar visible={sidebarVisible} usuario = {props.usuario}/>
@@ -49,17 +54,14 @@ function Zoom(props) {
     <hr/>
     <h1>Zoom</h1>
     <hr/>
-    <footer>
-          <div className="Horarios">
-          <br/>
-            <h5> I D de la reunión :</h5>
-            <h6> 9 9 9  3 3 3  2 2 9 9  </h6>
-            <br/>
-            <h6> C O N T R A S E Ñ A :</h6>
-            <h6> 1 0 2 0 2 4 </h6>
-            <br/>
-          </div>
-        </footer>
+    <SheetViewer hoja="Zoom"></SheetViewer>
+    {props.usuario && (
+          <>
+          <button className="ver-formulario-btn" onClick={goToGoogleSheets}>
+              Ver formulario
+            </button>
+          </>
+        )}
       </div>
     </div>
 

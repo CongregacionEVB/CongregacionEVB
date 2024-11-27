@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import './SheetViewer.css';
 
-const SheetViewer = () => {
+const SheetViewer = (props) => {
   const [data, setData] = useState([]); // Inicializa como un array vacío
   const [loading, setLoading] = useState(true); // Controla el estado de carga
   const apiUrl = "https://api.steinhq.com/v1/storages/673f7bffc0883333655272c8"; // URL de SteinHQ
-  const sheetName = "Hoja 1"; // Nombre de la hoja
+  //const sheetName = "Hoja 1"; // Nombre de la hoja
+  const sheetName = props.hoja; // hoja 2
 
   useEffect(() => {
     const fetchData = async () => {

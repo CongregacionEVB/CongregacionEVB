@@ -50,7 +50,7 @@ function App() {
         </Route>
         <Route path="/Organigrama" element={<Organigrama usuario={usuario}/>}>
         </Route>
-        <Route path="/Zoom" element={<Zoom usuario={usuario}/>}>
+        <Route path="/Zoom" element={<Zoom usuario={usuario} hoja="Hoja 2"/>}>
         </Route>
         <Route path="/GruposPredicacion" element={<GruposPredicacion usuario={usuario}/>}>
         </Route>

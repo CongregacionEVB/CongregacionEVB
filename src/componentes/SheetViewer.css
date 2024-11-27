@@ -26,7 +26,8 @@
   
   .SheetViewer th, 
   .SheetViewer td {
-    text-align: left;
+    font-family: "Quicksand";
+    text-align: center;
     padding: 12px 15px;
     border: 1px solid #ddd; /* Borde para celdas */
   }
