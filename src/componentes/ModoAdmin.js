@@ -31,11 +31,10 @@ var nombreImagen;
 var tabla;
 
 var modificando = "...";
-var enviando = false;
 
 function ModoAdmin(props) {
   const [file, setFile] = useState(null);
-  const [per, setPerc] = useState(null);
+  const [subido, setSubido] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar el menú desplegable
 
@@ -119,7 +118,6 @@ function ModoAdmin(props) {
         (snapshot) => {
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log('Upload is ' + progress + '% done');
-          setPerc(progress);
         },
         (error) => {
           console.log(error);
@@ -128,6 +126,7 @@ function ModoAdmin(props) {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             rutaImagen = downloadURL;
             console.log('File available at', downloadURL);
+            setSubido(true);
           });
         }
       );
@@ -141,9 +140,8 @@ function ModoAdmin(props) {
   const handleAdd = async (e) => {
     e.preventDefault();
     console.log(db);
-    enviando = true;
     try {
-      if (tabla == "Anuncios" || tabla == "AnunciosEVB")
+      if (tabla == "AnunciosEVB")
       {
         nombreImagen = nombreImagen.split("/")[1]; // EXPERIMENTAL
         await addDoc(collection(db, tabla,), { // addDoc(collection(db, "cities")
@@ -182,7 +180,7 @@ function ModoAdmin(props) {
       console.error('Error al añadir el documento: ', error);
     }
     finally {
-      enviando = false;
+      setSubido(false);
     }
   };
 
@@ -234,7 +232,7 @@ function ModoAdmin(props) {
             />
           </form>
           <img width='600px' id='imgUpl' src={file ? URL.createObjectURL(file) : ''} /> <br/>
-          <button disabled={per == null || per<100 || enviando == true} onClick={handleAdd}>Enviar</button>
+          <button disabled={subido == false} onClick={handleAdd}>Enviar</button>
 
         </div>
       </div>
