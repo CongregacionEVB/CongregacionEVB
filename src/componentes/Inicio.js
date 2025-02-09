@@ -36,7 +36,7 @@ function Inicio(props) {
   };
 
   const goToGoogleSheets = () => {
-    window.open("https://docs.google.com/spreadsheets/d/11968Yq2O9I9VH2vr46gB-r1wvUAoR6EqoLSgTx0oRrs/edit?gid=0#gid=0", "_blank");  
+    window.open("https://docs.google.com/spreadsheets/d/11968Yq2O9I9VH2vr46gB-r1wvUAoR6EqoLSgTx0oRrs/edit?gid=119171419#gid=119171419", "_blank");  
   };
 
   if (loading) {

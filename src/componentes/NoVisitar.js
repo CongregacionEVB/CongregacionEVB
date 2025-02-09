@@ -12,7 +12,7 @@ function NoVisitar(props) {
     };
   
     const goToGoogleSheets = () => {
-      window.open("https://docs.google.com/spreadsheets/d/11968Yq2O9I9VH2vr46gB-r1wvUAoR6EqoLSgTx0oRrs/edit?gid=0#gid=0", "_blank");  
+      window.open("https://docs.google.com/spreadsheets/d/11968Yq2O9I9VH2vr46gB-r1wvUAoR6EqoLSgTx0oRrs/edit?gid=201621672#gid=201621672", "_blank");  
     };
   
 
