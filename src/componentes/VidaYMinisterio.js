@@ -16,7 +16,7 @@ function VidaYMinisterio(props) {
       let list = [];
       try
       {
-    const querySnapshot = await getDocs(collection(db,"Vida y ministerio"));
+    const querySnapshot = await getDocs(collection(db,"Vida y ministerio EVB"));
     const querySnapshot2 = await getDocs(collection(db,"Vida y ministerio EVB abajo"));
     querySnapshot.forEach((doc) => {
       list.push({id: doc.id,...doc.data()});
