@@ -35,6 +35,10 @@ function Inicio(props) {
     setSidebarVisible(!sidebarVisible);
   };
 
+  const goToGoogleSheets = () => {
+    window.open("https://docs.google.com/spreadsheets/d/11968Yq2O9I9VH2vr46gB-r1wvUAoR6EqoLSgTx0oRrs/edit?gid=0#gid=0", "_blank");  
+  };
+
   if (loading) {
     return <p>Cargando...</p>;
   }
@@ -55,7 +59,7 @@ function Inicio(props) {
         <div id="Titulo">
           <br />
           <br />
-          <h1>Congregación Oeste José León Suarez</h1>
+          <h1>Congregación Este Villa Bosch</h1>
         </div>
 
         <div id="Texto">
@@ -76,6 +80,13 @@ function Inicio(props) {
             <h6>{data.Dia2}</h6>
             <br />
           </div>
+          {props.usuario && (
+          <>
+          <button className="ver-formulario-btn" onClick={goToGoogleSheets}>
+            Ver formulario
+          </button>
+          </>
+        )}
         </footer>
       </div>
     </div>
