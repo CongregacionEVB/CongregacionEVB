@@ -71,11 +71,11 @@ function ModoAdmin(props) {
         nombreImagen = "EVB/VidaYMinisterioEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";   
         modificando = "Vida y ministerio";
         break;
-        case "VidaYMinisterioEVBabajo":
-          tabla = "Vida y ministerio EVB abajo";
-          nombreImagen = "images/VidaYMinisterioEVBabajo.png";  
-          modificando = "Vida y ministerio EVB abajo";
-          break;
+      case "VidaYMinisterioEVBabajo":
+        tabla = "Vida y ministerio EVB abajo";
+        nombreImagen = "images/VidaYMinisterioEVBabajo.png";  
+        modificando = "Vida y ministerio EVB abajo";
+        break;
       case "GruposDePredicacion":
         tabla = "Grupos de Predicacion";
         nombreImagen = "EVB/GruposDePredicacionEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png"; 
