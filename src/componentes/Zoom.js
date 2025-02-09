@@ -41,7 +41,7 @@ function Zoom(props) {
   };
 
   const goToGoogleSheets = () => {
-    window.open("https://docs.google.com/spreadsheets/d/1N73IzMZndcuImT_ODf_aDrnLvWAuBF8p5tqTZBD3Nt4/edit?gid=272190201#gid=272190201", "_blank");  
+    window.open("https://docs.google.com/spreadsheets/d/11968Yq2O9I9VH2vr46gB-r1wvUAoR6EqoLSgTx0oRrs/edit?gid=0#gid=0", "_blank");  
   };
 
   return (
