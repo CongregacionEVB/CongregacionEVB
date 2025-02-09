@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/CongregacionEVB/static/css/main.f46f8598.css",
-    "main.js": "/CongregacionEVB/static/js/main.8d8be10e.js",
+    "main.js": "/CongregacionEVB/static/js/main.b61c36cb.js",
     "static/media/HomeFinal.png": "/CongregacionEVB/static/media/HomeFinal.4676cd5bd93c8357238c.png",
     "index.html": "/CongregacionEVB/index.html",
     "main.f46f8598.css.map": "/CongregacionEVB/static/css/main.f46f8598.css.map",
-    "main.8d8be10e.js.map": "/CongregacionEVB/static/js/main.8d8be10e.js.map"
+    "main.b61c36cb.js.map": "/CongregacionEVB/static/js/main.b61c36cb.js.map"
   },
   "entrypoints": [
     "static/css/main.f46f8598.css",
-    "static/js/main.8d8be10e.js"
+    "static/js/main.b61c36cb.js"
   ]
 }
