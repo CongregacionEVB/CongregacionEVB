@@ -56,7 +56,7 @@ function GruposPredicacion(props) {
         <h3 id='pdfText'>{data[0].name}</h3>
       </a>
       ) : (
-      <img className="imgVida" src={data[0]? data[0].url : ""} alt={'Conf'} />
+      <img id="imgVida" src={data[0]? data[0].url : ""} alt={'Conf'} />
               ) : "" }
     <br/>
     <br/>

@@ -71,6 +71,11 @@ function ModoAdmin(props) {
         nombreImagen = "EVB/VidaYMinisterioEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png";   
         modificando = "Vida y ministerio";
         break;
+      case "VidaYMinisterioEVBAbajo":
+        tabla = "Vida y ministerio EVB abajo";
+        nombreImagen = "images/VidaYMinisterioEVBAbajo.png";  
+        modificando = "Vida y ministerio EVB abajo";
+        break;
       case "GruposDePredicacion":
         tabla = "Grupos de Predicacion";
         nombreImagen = "EVB/GruposDePredicacionEVB" + ": " + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear() + ":" + date.getHours() + ":" + date.getMinutes() + ".png"; 
@@ -214,6 +219,7 @@ function ModoAdmin(props) {
                 <a href="#" onClick={() => handleMenuItemClick('Territorios')}>Territorios</a>
                 <a href="#" onClick={() => handleMenuItemClick('Anuncios')}>Anuncios</a>
                 <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterio')}>Vida y ministerio</a>
+                <a href="#" onClick={() => handleMenuItemClick('VidaYMinisterioEVBAbajo')}>Vida y ministerio EVB abajo</a>
                 <a href="#" onClick={() => handleMenuItemClick('GruposDePredicacion')}>Grupos De Predicacion</a>
                 <a href="#" onClick={() => handleMenuItemClick('Organigrama')}>Organigrama</a>
                 <a href="#" onClick={() => handleMenuItemClick('Asignaciones')}>Asignaciones</a>

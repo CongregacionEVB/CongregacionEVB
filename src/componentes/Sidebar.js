@@ -98,17 +98,19 @@ function Sidebar({ visible, usuario }) {
         <li><a href="Zoom">ZOOM</a></li>
         <hr />
         <li><a href="GruposPredicacion">GRUPOS DE PREDICACION</a></li>
-        <hr/>
+        <hr />
         <li><a href="Anuncios">ANUNCIOS</a></li>
-        <hr/>
+        <hr />
         <li><a href="Asignaciones">ASIGNACIONES</a></li>
+        <hr />
+        <li><a href="https://buildings-tau.vercel.app/" target="_blank">EDIFICIOS ↗</a></li>
         <hr />
         {usuario && (
           <>
             <li><a href="Admin">MULTIMEDIA</a></li>
             <hr />
             <li><a href="Formulario">FORMULARIO</a></li>
-            <hr/>
+            <hr />
           </>
         )}
         <li>
