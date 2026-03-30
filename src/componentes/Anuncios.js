@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Anuncios.css';
 import Sidebar from './Sidebar';
-import { collection, getDocs, getFirestore, query, orderBy } from 'firebase/firestore';
-import appFirebase from '../credenciales';
 
-const db = getFirestore(appFirebase);
+// Importamos el cliente de Supabase
+import { supabase } from '../credenciales';
 
 const isPDF = (url) => /.*\.pdf(\?.*)?$/.test(url);
 const isVideo = (url) => /.*\.(mp4|avi|mov)(\?.*)?$/.test(url);
@@ -14,19 +13,26 @@ function Anuncios(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      let list = [];
       try {
-        const q = query(collection(db, "AnunciosEVB"), orderBy("timeStamp", "desc"));
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-          list.push({ id: doc.id, ...doc.data() });
-          console.log(doc.id, " => ", doc.data());
-        });
+        // Hacemos la consulta a Supabase ordenando por timeStamp de forma descendente
+        const { data: list, error } = await supabase
+          .from('AnunciosEVB')
+          .select('*')
+          .order('timeStamp', { ascending: false });
+
+        if (error) {
+          throw error;
+        }
+
+        // Supabase ya devuelve un array de objetos listo para usar
         setData(list);
+        console.log("Anuncios obtenidos:", list);
+
       } catch (err) {
-        console.log(err);
+        console.error("Error al obtener los anuncios:", err.message);
       }
     };
+    
     fetchData();
   }, []);
 
@@ -50,7 +56,7 @@ function Anuncios(props) {
         <hr />
         <div id='PLACEHOLDER'>
           {data.map((item, index) => (
-            <div key={index}>
+            <div key={item.id || index}>
               {isPDF(item.url) ? (
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`Anuncio ${index + 1}`} />

@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Sidebar.css';
 
-import appFirebase from '../credenciales';
-import { getAuth, signOut } from 'firebase/auth';
-const auth = getAuth(appFirebase);
+// Importamos el cliente de Supabase
+import { supabase } from '../credenciales';
 
 function Sidebar({ visible, usuario }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -64,6 +63,14 @@ function Sidebar({ visible, usuario }) {
     }
   };
 
+  // Función para manejar el cierre de sesión con Supabase
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      console.error("Error al cerrar sesión:", error.message);
+    }
+  };
+
   return (
     <div className={`sidebar ${visible ? 'visibleSideBar' : 'hiddenSideBar'}`}>
       <ul>
@@ -103,7 +110,7 @@ function Sidebar({ visible, usuario }) {
         <hr />
         <li><a href="Asignaciones">ASIGNACIONES</a></li>
         <hr />
-        <li><a href="https://buildings-tau.vercel.app/" target="_blank">EDIFICIOS ↗</a></li>
+        <li><a href="https://buildings-tau.vercel.app/" target="_blank" rel="noreferrer">EDIFICIOS ↗</a></li>
         <hr />
         {usuario && (
           <>
@@ -114,7 +121,8 @@ function Sidebar({ visible, usuario }) {
           </>
         )}
         <li>
-          {usuario ? <button className="logoutButton" onClick={() => signOut(auth)}>LOG OUT</button> : <a href="Login">LOG IN</a>}
+          {/* Reemplazamos el signOut de Firebase por nuestra nueva función */}
+          {usuario ? <button className="logoutButton" onClick={handleLogout}>LOG OUT</button> : <a href="Login">LOG IN</a>}
         </li>
         <hr />
       </ul>

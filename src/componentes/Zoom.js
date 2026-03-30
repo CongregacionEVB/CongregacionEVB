@@ -1,38 +1,37 @@
 import './NoVisitar.css';
 import Sidebar from './Sidebar';
-import React, { useState } from 'react';
-import { addDoc, collection, doc,getDocs, setDoc,getFirestore, serverTimestamp} from 'firebase/firestore';
-import appFirebase from '../credenciales';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import SheetViewer from './SheetViewer';
 
-export const db = getFirestore(appFirebase);
-
-const isPDF = (url) => /.*\.pdf(\?.*)?$/.test(url);
+// Importamos el cliente de Supabase
+import { supabase } from '../credenciales';
 
 function Zoom(props) {
-
+  // Nota: Este estado 'data' guarda la información, pero actualmente no se muestra en el return
   const [data, setData] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const fetchData = async () => {
-      let list = [];
-      try
-      {
-    const querySnapshot = await getDocs(collection(db,"Zoom"));
-    querySnapshot.forEach((doc) => {
-      list.push({id: doc.id,...doc.data()});
-      // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
-    });
-    setData(list);
-  }catch(err)
-  {
-    console.log(err);
-  }
+      try {
+        const { data: list, error } = await supabase
+          .from('Zoom')
+          .select('*')
+          .order('timeStamp', { ascending: false });
+
+        if (error) {
+          throw error;
+        }
+
+        setData(list);
+        console.log("Datos de Zoom obtenidos:", list);
+
+      } catch (err) {
+        console.error("Error al obtener datos de Zoom:", err.message);
+      }
     };
+
     fetchData();
-  },[])
+  }, []);
 
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
@@ -46,27 +45,31 @@ function Zoom(props) {
 
   return (
     <div className="Zoom">
-        <Sidebar visible={sidebarVisible} usuario = {props.usuario}/>
+      <Sidebar visible={sidebarVisible} usuario={props.usuario} />
 
-        <button className="toggle-btn" onClick={toggleSidebar}><img src="img territorios/menu2.png" alt="Toggle Sidebar" /></button>
+      <button className="toggle-btn" onClick={toggleSidebar}>
+        <img src="img territorios/menu2.png" alt="Toggle Sidebar" />
+      </button>
 
-        <div className={`content ${sidebarVisible ? 'visibleContent' : 'hiddenContent'}`}>
-    <hr/>
-    <h1>Zoom</h1>
-    <hr/>
-    <SheetViewer hoja="Zoom"></SheetViewer>
-    {props.usuario && (
+      <div className={`content ${sidebarVisible ? 'visibleContent' : 'hiddenContent'}`}>
+        <hr />
+        <h1>Zoom</h1>
+        <hr />
+        
+        {/* Renderizado de la hoja de cálculo */}
+        <SheetViewer hoja="Zoom"></SheetViewer>
+        
+        {/* Botón exclusivo para administradores */}
+        {props.usuario && (
           <>
-          <button className="ver-formulario-btn" onClick={goToGoogleSheets}>
+            <button className="ver-formulario-btn" onClick={goToGoogleSheets}>
               Ver formulario
             </button>
           </>
         )}
       </div>
     </div>
-
   );
-  
 }
 
 export default Zoom;
