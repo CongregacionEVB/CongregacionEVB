@@ -16,7 +16,7 @@ function Zoom(props) {
         const { data: list, error } = await supabase
           .from('Zoom')
           .select('*')
-          .order('timeStamp', { ascending: false });
+          .order('timeStamp', { ascending: true });
 
         if (error) {
           throw error;

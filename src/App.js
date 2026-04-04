@@ -41,7 +41,8 @@ function App() {
   }, []); 
 
   return (
-    <Router basename='/CongregacionEVB'>
+      <Router basename='/CongregacionEVB'>
+      {/*<Router>*/}
       <Routes>
         <Route exact path="/" element={<Inicio usuario={usuario}/>} />
         <Route path="/NoVisitar" element={<NoVisitar usuario={usuario}/>} />

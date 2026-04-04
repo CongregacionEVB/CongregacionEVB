@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 // Importamos el cliente de Supabase
 import { supabase } from '../credenciales';
 
+const isPDF = (url) => /.*\.pdf(\?.*)?$/.test(url);
+
 function Territorios(props) {
   const [data, setData] = useState([]);
 
@@ -15,7 +17,7 @@ function Territorios(props) {
         const { data: list, error } = await supabase
           .from('Territorios')
           .select('*')
-          .order('timeStamp', { ascending: false });
+          .order('timeStamp', { ascending: true });
 
         if (error) {
           throw error;
@@ -51,10 +53,31 @@ function Territorios(props) {
         <h1>Territorio de la Congregación</h1>
         <hr />
         
-        {data.length > 0 && data[0] ? (
-          <img id="imgTer" src={data[0].url} alt="Territorio de la congregación" />
+        {/* Renderizado dinámico y modular */}
+        {data.length === 0 ? (
+          <p>Cargando información o no hay contenido disponible...</p>
         ) : (
-          <p>Cargando información o no hay mapa de territorio disponible.</p>
+          data.map((item, index) => (
+            <div key={item.id} style={{ marginBottom: '30px', width: '100%' }}>
+              {isPDF(item.url) ? (
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`PDF ${index + 1}`} />
+                  <h3 id='pdfText'>{item.name}</h3>
+                </a>
+              ) : (
+                <img id="imgVida" src={item.url} alt={`Contenido ${index + 1}`} style={{ maxWidth: '100%', height: 'auto' }} />
+              )}
+              
+              {/* Agrega una línea separadora entre elementos, excepto después del último */}
+              {index < data.length - 1 && (
+                <>
+                  <br /><br />
+                  <hr style={{ width: '80%', margin: '0 auto' }} />
+                  <br />
+                </>
+              )}
+            </div>
+          ))
         )}
         
         <br />

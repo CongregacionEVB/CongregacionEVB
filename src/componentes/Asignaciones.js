@@ -17,7 +17,7 @@ function Asignaciones(props) {
         const { data: list, error } = await supabase
           .from('Asignaciones')
           .select('*')
-          .order('timeStamp', { ascending: false });
+          .order('timeStamp', { ascending: true });
 
         if (error) {
           throw error;
@@ -54,17 +54,31 @@ function Asignaciones(props) {
         <hr />
         <br />
         
-        {data.length > 0 && data[0] ? (
-          isPDF(data[0].url) ? (
-            <a href={data[0].url} target="_blank" rel="noopener noreferrer">
-              <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={'Conf'} />
-              <h3 id='pdfText'>{data[0].name}</h3>
-            </a>
-          ) : (
-            <img id="imgVida" src={data[0].url} alt={'Conf'} />
-          )
+        {/* Renderizado dinámico y modular */}
+        {data.length === 0 ? (
+          <p>Cargando información o no hay contenido disponible...</p>
         ) : (
-          <p>No hay asignaciones disponibles.</p>
+          data.map((item, index) => (
+            <div key={item.id} style={{ marginBottom: '30px', width: '100%' }}>
+              {isPDF(item.url) ? (
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
+                  <img className='pdfAnun' src="img territorios/pdf-icon.png" alt={`PDF ${index + 1}`} />
+                  <h3 id='pdfText'>{item.name}</h3>
+                </a>
+              ) : (
+                <img id="imgVida" src={item.url} alt={`Contenido ${index + 1}`} style={{ maxWidth: '100%', height: 'auto' }} />
+              )}
+              
+              {/* Agrega una línea separadora entre elementos, excepto después del último */}
+              {index < data.length - 1 && (
+                <>
+                  <br /><br />
+                  <hr style={{ width: '80%', margin: '0 auto' }} />
+                  <br />
+                </>
+              )}
+            </div>
+          ))
         )}
         
         <br />
